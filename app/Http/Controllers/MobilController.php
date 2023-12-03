@@ -9,8 +9,8 @@ class MobilController extends Controller
 {
   public function index()
   {
-    $mobil = Mobil::all();
-    return view('showroom/index', compact('mobil'));
+    $showroom = Mobil::all();
+    return view('showroom/index', compact('showroom'));
   }
 
   public function create()

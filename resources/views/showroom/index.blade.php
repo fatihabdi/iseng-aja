@@ -4,12 +4,12 @@
   <section id="list">
     <div class="container">
       <h1>My Showroom</h1>
-      @if (count($mobil) > 0)
+      @if (count($showroom) > 0)
         <div class="table-responsive">
           <table class="table-striped table">
             <thead>
               <tr>
-                <th>Name</th>
+                <th>Nama</th>
                 <th>Brand</th>
                 <th>Warna</th>
                 <th>Tipe</th>
@@ -17,27 +17,21 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($mobil as $row)
+              @foreach ($showroom as $mobil)
                 <tr>
-                  <td>{{ $row->nama_mobil }}</td>
-                  <td>{{ $row->brand_mobil }}</td>
-                  <td>{{ $row->warna_mobil }}</td>
-                  <td>{{ $row->tipe_mobil }}</td>
-                  <td>{{ $row->harga_mobil }}</td>
+                  <td>{{ $mobil->nama_mobil }}</td>
+                  <td>{{ $mobil->brand_mobil }}</td>
+                  <td>{{ $mobil->warna_mobil }}</td>
+                  <td>{{ $mobil->tipe_mobil }}</td>
+                  <td>{{ $mobil->harga_mobil }}</td>
                 </tr>
               @endforeach
             </tbody>
           </table>
         </div>
       @else
-        <p>No cars in the showroom.</p>
+        <p>Tidak ada mobil di showroom ini.</p>
       @endif
     </div>
   </section>
 @endsection
-
-@if (session('success'))
-  <script>
-    alert(`{{ session('success') }}`)
-  </script>
-@endif
