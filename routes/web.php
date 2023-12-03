@@ -19,7 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', [MobilController::class, 'showCar']);
+Route::get('/home', [MobilController::class, 'index']);
+Route::post('addCar', [MobilController::class, 'addCar'])->name('addCar.post');
+Route::get('/showroom', [MobilController::class, 'showCar']);
 
 Route::get('/login', function () {
     return view('login');
