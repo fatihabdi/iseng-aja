@@ -16,25 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('home');
 });
 
-Route::get('/home', [MobilController::class, 'index']);
-Route::post('addCar', [MobilController::class, 'addCar'])->name('addCar.post');
-Route::get('/showroom', [MobilController::class, 'showCar']);
-
-Route::get('/login', function () {
-    return view('login');
-});
-
-Route::get('/register', function () {
-    return view('register');
-});
-
-Route::get('/add', function () {
-    return view('add');
-});
-
-Route::get('/update', function () {
-    return view('update');
-});
+Route::get('showroom', [MobilController::class, 'index'])->name('showroom.index');
+Route::get('showroom/create', [MobilController::class, 'create'])->name('showroom.create');
+Route::post('showroom/store', [MobilController::class, 'store'])->name('showroom.store');
